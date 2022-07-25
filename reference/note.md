@@ -6,7 +6,7 @@ The following equation is `State Update Equation`, which is used to estimate the
 
 $
 \hat{x}_{n,n}=\hat{x}_{n,n-1}+\frac{1}{n}*(z_n-\hat{x}_{n,n-1})
-$
+$ 
 
 + $\hat{x}_{n,n}$: the estimate state of `x` at the time `n` based on the measurement at time `n`
 + $\hat{x}_{n,n-1}$: the estimate state of `x` at the time `n` based on the measurement at time `n-1`
