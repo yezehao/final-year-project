@@ -23,10 +23,12 @@ $$
 The update equation which is used to track the aircraft is called `α−β track update equations` or `α−β track filtering equations`.
 
 + The Update State Equation for position:
-  $$\hat{x}_{n,n}=\hat{x}_{n,n-1}+\frac{1}{n}*(z_n-\hat{x}_{n,n-1})  $$
+
+$$\hat{x}_{n,n}=\hat{x}_{n,n-1}+\frac{1}{n}*(z_n-\hat{x}_{n,n-1})  $$
   
 + The Update State Equation for velocity:
-  $$\hat{\dot{x}}_{n,n}=\hat{\dot{x}}_{n,n-1}+\beta*(\frac{z_n-\hat{x}_{n,n-1}}{\Delta t})$$
+  
+$$\hat{\dot{x}}_{n,n}=\hat{\dot{x}}_{n,n-1}+\beta*(\frac{z_n-\hat{x}_{n,n-1}}{\Delta t})$$
 
 ## 1.3. Dynamic Model Equation (α−β−γ Filter)
 In this example, we are going to track an aircraft that is moving with `constant acceleration` in `one dimension` with the α−β−γ filter. The update equations about position, velocity and acceleration are shown as follow: 
