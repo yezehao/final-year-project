@@ -47,4 +47,15 @@ $$K_n=\frac{p_{n,n-1}}{p_{n,n-1}+r_n}$$
 + $p_{n,n-1}$: the extrapolated estimate uncertainty,  the estimate uncertainty of `p` at the time `n` based on the measurement at time `n-1`
 
 
+## 1.5. Kalman Filter for Multi-Dimension
+The matrixs about the multi-dimension are shown as follow:
+![avatar](matrix1.jpg)
+![avatar](matrix2.jpg)
+
+These equations about the matrixs can be simplified as `state exploration equation`.  
+$$\hat{x}_{n+1,n}=F*\hat{x}_{n,n}+G*\hat{u}_{n,n}+\omega_n$$
++ $F$: state transition matrix  
++ $G$: input transition matrix  
+
+
 
