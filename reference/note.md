@@ -38,3 +38,13 @@ $$\hat{x}_{n,n}=\hat{x}_{n,n-1}+\alpha*(z_n-\hat{x}_{n,n-1})$$
 $$\hat{\dot{x}}_{n,n}=\hat{\dot{x}}_{n,n-1}+\beta*(\frac{z_n-\hat{x}_{n,n-1}}{\Delta t})$$
 
 $$\hat{\ddot{x}}_{n,n}=\hat{\ddot{x}}_{n,n-1}+\gamma*(\frac{z_n-\hat{x}_{n,n-1}}{0.5* \Delta t^2})$$
+
+## 1.4. Kalman Gain Equation
+
+$$K_n=\frac{p_{n,n-1}}{p_{n,n-1}+r_n}$$
+
++ $r_n$: the measurement uncertainty
++ $p_{n,n-1}$: the extrapolated estimate uncertainty,  the estimate uncertainty of `p` at the time `n` based on the measurement at time `n-1`
+
+
+
