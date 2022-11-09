@@ -46,37 +46,3 @@ gantt
         Activity 15			: 	  			    20h
         Activity 16			: 			   	    48h
 ~~~
-<script>  
-            mermaid.ganttConfig = {
-                titleTopMargin:25,
-                barHeight:20,
-                barGap:4,
-                topPadding:50,
-                sidePadding:100,
-                gridLineStartPadding:35,
-                fontSize:11,
-                numberSectionStyles:3,
-                axisFormatter: [
-                    // Within a day
-                    ['%I:%M', function (d) {
-                        return d.getHours();
-                    }],
-                    // Monday a week
-                    ['w. %U', function (d) {
-                        return d.getDay() == 1;
-                    }],
-                    // Day within a week (not monday)
-                    ['%a %d', function (d) {
-                        return d.getDay() &amp;&amp; d.getDate() != 1;
-                    }],
-                    // within a month
-                    ['%b %d', function (d) {
-                        return d.getDate() != 1;
-                    }],
-                    // Month
-                    ['%m-%y', function (d) {
-                        return d.getMonth();
-                    }]
-                ]
-            };
-</script>
