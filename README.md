@@ -15,34 +15,53 @@ This project will be concerned with developing tracking algorithms for detecting
 
 
 ## Gannt Chart
+```mermaid
+gantt
+    dateFormat  YYYY-MM-DD
 
-~~~mermaid
-gantt  
-        dateFormat  YYYY-MM-DD
-        title <Name of the project>
+    Mataining this Gantt Chart [Zehao Ye] : 2022-09-26, 2023-05-31
 
-%%	<Name of Activity>		: crit if critical else empty,done, active or empty, reference name or empty, Start Date or dependency, End Date or Duration
-        section Phase 1 Name
-        Activity 1			:	 done,    des1, 2017-01-06, 2017-01-08
-        Activity 2               	:	 active,  des2, 2017-01-09, 2017-01-12
-        Activity 3               	:        	  des3, 2017-01-12, 5d
-        Activity 4              	:         	  des4, after des3, 5d
+    section Preparation
+    Week 1 [Zehao Ye] : Literature Review based on Kalman Filter, 2022-09-26, 24d
+    Week 2 [Yang Kai, Zepeng Pang] : blog2, after blog1, 7d
+    Week 3 [Zepeng Pang] : blog3, after blog2, 7d
+    Week 4 [Zepeng Pang] : blog4, after blog3, 5d
+    Setup GitHub Pages for publishing [Minghong Xu] : milestone, 2022-02-26, 0d
+    Preliminary Report : crit, after blog4, 2022-03-02
 
-        section Phase 2 Name
-        Activity 5 			: crit, done,		2017-01-06, 24h
-        Activity 6		        : crit, done, 		after des1, 2d
-        Activity 7		        : crit, active, 		    3d
-        Activity 8			: crit,			 	    5d
-        Activity 9			:			 	    2d
-        Activity 10			: 			 	    1d
+    section Project Management Documents
+    Supervisor Weekly Meeting Log [Zepeng Pang] : crit, 2022-01-31, 2022-02-25
+    LogBook is Git log: milestone, 2022-02-03, 0d
+    Attendance Record [Minghong Xu, Zepeng Pang] : 2022-02-03, 2022-02-27
+    Role Allocation (responsibility matrix) [Minghong Xu] : milestone, 2022-02-14, 0d
+    Contribution to Project Deliverables [Zepeng Pang] : 2022-02-25, 2022-03-02
 
-        section Phase 3 Name
-        Activity 11			: 	active,   a1,	after des1, 3d
-        Activity 12			:			after a1  , 20h
-        Activity 13			:		 doc1, 	after a1  , 48h
+    section Presentation
+    Poster [Zehao Ye, Kai Yang] : crit, 2022-02-25, 2022-03-02
+    Functional Bench Demonstration [Zepeng Pang] : crit, 2022-02-25, 2022-03-02
+    Group Talk : 2022-03-03, 8h
 
-        section Phase 4 Name
-        Activity 12			:			after doc1, 3d
-        Activity 15			: 	  			    20h
-        Activity 16			: 			   	    48h
-~~~
+    section Simulation
+    Setup Simulation Env : crit, setup_sim_env, 2022-02-03, 7d
+    PyBullet Basic Settings & Standing :after setup_sim_env, 3d
+    Research : crit, research, after setup_sim_env, 6d
+    Control Each Motor Individually [Minghong Xu] : after research, 2022-02-20
+    Squatting [Minghong Xu] : 2022-02-18, 2022-02-22
+    Pitching [Zehao Ye, Minghong Xu] : crit, 2022-02-17, 2022-02-24
+    Rolling [Kai Yang, Minghong Xu] : 2022-02-17, 2022-02-27
+    Yawing [Zehao Ye, Minghong Xu] : 2022-02-17, 2022-02-26
+
+    section Sustainability
+    Found a good reference book [Kai Yang] : milestone, 2022-02-25, 0d
+    Sustainability, DevelopmentReport, and Ethical Evaluation Report [Kai Yang] : 2022-02-26, 2022-03-07
+
+    section Project Report
+    Introduction [Zepeng Pang] : 2022-03-04, 2022-03-17
+    Materials and Methods [Minghong Xu] : 2022-03-04, 2022-03-17
+    Results and Analysis [Zehao Ye] : 2022-03-04, 2022-03-17
+    Discussion and Conclusions [Zepeng Pang, Zehao Ye, Kai Yang] : 2022-03-04, 2022-03-17
+    Appendices [Zepeng Pang, Minghong Xu]: 2022-03-17, 2022-03-18
+    Abstract [Zepeng Pang] : 2022-03-17, 2022-03-18
+    Check Academic Style : 2022-03-16, 2d
+    Submission DDL: milestone, 2022-03-18, 0d
+```
