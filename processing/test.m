@@ -2,28 +2,23 @@
 clear;
 clc;
 
-videoobj =  ... % input the video to make further process
-VideoReader('D:\research\final-year-project\data\2.5_1_1.mp4');
-nframes = get (videoobj, "NumFrames"); % Get the number of frames
-
 i=1200;
+nframes = 1495;
 
-    % Read in the frames
-    frame_1 = rgb2gray(read(videoobj,i));
-    frame_2 = rgb2gray(read(videoobj,i+1));
-    I = frame_2-frame_1;% get the substration of frames
+load('D:\research\final-year-project\data\preprocess\2.5_1_1.mat');
 
-    % image Processing
-    SE = strel('diamond',2); % construct SE for dilation
-    I_dilation = imdilate(I,SE); % use dilation to expand the object
-    I_pre = imbinarize(I_dilation,0.12); % convert grayscale image into binary image
-    I_binary = imdilate(I_pre,SE);
-    I_pro = bwareaopen(I_binary,5); % delete the obj smaller than 5 pixels
-    [labelpic,num] = bwlabel (I_pro,8); % label the objects
-
-    % Region Centroid
-    prop = regionprops(labelpic,"Centroid"); % get the centroid coordinates
-    structure(i).centroid = prop; % store the coordinates in the structure
-
+for i = 1:(nframes-1)
+    if isempty(structure(i).centroid) == 0 % represent that there are variables
+        x1 = structure(i).centroid(1).Centroid;
+        if isempty(structure(i+1).centroid) == 0
+            x2 = structure(i+1).centroid(1).Centroid;
+            distance0 = 20;
+            distance = pdist([x1;x2],'euclidean');
+            if distance0 >=distance
+                distance0 = distance;
+            end
+        end
+    end  
+end
 
 
