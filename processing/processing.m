@@ -1,7 +1,7 @@
 %%  Read the video information
 clear; clc;
 videoobj =  ... % input the video to make further process
-VideoReader('D:\research\final-year-project\data\2.5_1_1.mp4');
+VideoReader('D:\research\final-year-project\data\video\2.5_1_1.mp4');
 nframes = get (videoobj, "NumFrames"); % Get the number of frames
 
 %% Preprocessing
@@ -31,4 +31,4 @@ for i = 1:(nframes-1)
 end
 
 %% Save the structure into preprocessing file
-save('D:\research\final-year-project\data\preprocess\2.5_1_1.mat','structure')
+save('D:\research\final-year-project\data\process_result\2.5_1_1.mat','structure')
