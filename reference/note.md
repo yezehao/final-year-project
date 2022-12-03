@@ -59,7 +59,8 @@ $$\hat{x}_{n+1,n}=F*\hat{x}_{n,n}+G*\hat{u}_{n,n}+\omega_n$$
 
 
 The depreciation rate is 5%. (effective in six years)
-$$ total = CONTROL+BOOSTER+EGIL+NETWORK+WEATHER+PAYLOAD = 156600 $$ 
+
+$total = CONTROL+BOOSTER+EGIL+NETWORK+WEATHER+PAYLOAD = 156600$ 
 |CONTROL|BOOSTER|EGIL|NETWORK|WEATHER|PAYLOAD|TOTAL|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |4300|50000|2500|11800|23000|65000|156600|
