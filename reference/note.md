@@ -58,4 +58,17 @@ $$\hat{x}_{n+1,n}=F*\hat{x}_{n,n}+G*\hat{u}_{n,n}+\omega_n$$
 + $G$: input transition matrix  
 
 
+The depreciation rate is 5%. (effective in six years)
+$$ total = CONTROL+BOOSTER+EGIL+NETWORK+WEATHER+PAYLOAD = 156600 $$ 
+|CONTROL|BOOSTER|EGIL|NETWORK|WEATHER|PAYLOAD|TOTAL|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|4300|50000|2500|11800|23000|65000|156600|
 
+# Method 1:
++ End of year 1.0: $value = £156.6k - 5\% * £156.6k = £148.8k$
++ End of year 2.0: $value = £148.8k - 5\% * £148.8k = £141.3k$
++ End of year 3.0: $value = £141.3k - 5\% * £141.3k = £134.3k$
++ End of year 3.5: $value = £134.3k - (5\% * £134.3k)/2 = £130.9k$
+
+# Method 2:
++ End of year 3.5: $value = £156.6k* (1-5\%)^{3.5} = £130.9k$
