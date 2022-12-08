@@ -1,7 +1,7 @@
 %%  Read the video information
 clear; clc;
 videoobj =  ... % input the video to make further process
-VideoReader('C:\Users\30348\Documents\final-year-project\data\video\2.5_1_3.mp4');
+VideoReader('C:\Users\30348\Documents\final-year-project\data\video\2.5_1_1.mp4');
 nframes = get (videoobj, "NumFrames"); % Get the number of frames
 
 %% Image Processing
@@ -38,4 +38,4 @@ end
 clc;
 
 %% Save the structure into preprocessing file
-save('C:\Users\30348\Documents\final-year-project\data\centroid\2.5_1_3.mat','structure')
+save('C:\Users\30348\Documents\final-year-project\data\centroid\2.5_1_1.mat','structure')
