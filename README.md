@@ -28,7 +28,7 @@ gantt
     Preliminary Report : crit, 2022-10-14, 0d
 
     section Design & Development
-    Design the Algorithm : design, 2022-10-17, 14d
+    Design the Algorithm : 2022-10-17, 14d
     Image Processing Algorithm Development : 2022-10-24, 10d
     Image Processing Algorithm Testing : 2022-10-31, 10d
     Vehicle Association Algorithm Development : 2022-11-7, 14d
@@ -36,10 +36,11 @@ gantt
     Single Vehicle Tracking Algorithm Development : 2022-11-28, 10d
     Single Vehicle Tracking Algorithm Testing : 2022-12-5, 14d
     Presentation Preparation : 2022-12-10, 4d
-    Multiple Vehicle Tracking Algorithm Development: 2023-01-09, 21d
-    Multiple Vehicle Tracking Algorithm Testing: 2023-01-23, 14d
     Single Vehicle Tracking : milestone, 2022-12-12, 0d
     Presentation : crit, 2022-12-13, 0d
+    Multiple Vehicle Tracking Algorithm Development: 2023-01-09, 21d
+    Multiple Vehicle Tracking Algorithm Testing: 2023-01-23, 14d
+
 
     section Testing
     Overall Testing: 2023-01-30, 35d
