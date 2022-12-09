@@ -22,18 +22,22 @@ gantt
     Mataining this Gantt Chart [Zehao Ye] : 2022-09-26, 2023-05-31
 
     section Preparation
-    Week 1 [Zehao Ye] : Literature Review based on Kalman Filter, 2022-09-26, 24d
-    Week 2 [Yang Kai, Zepeng Pang] : blog2, after blog1, 7d
-    Week 3 [Zepeng Pang] : blog3, after blog2, 7d
-    Week 4 [Zepeng Pang] : blog4, after blog3, 5d
-    Setup GitHub Pages for publishing [Minghong Xu] : milestone, 2022-02-26, 0d
-    Preliminary Report : crit, after blog4, 2022-03-02
+    Literature Review : prepare, 2022-09-26, 35d
+    Preliminary Reprot Writing : reprot writing, 2022-10-10, 7d
+    Risk Assessment and Safety forms : milestone, 2022-10-13, 0d
+    Preliminary Report : crit, after report writing, 2022-10-14
 
-    section Project Management Documents
-    Supervisor Weekly Meeting Log [Zepeng Pang] : crit, 2022-01-31, 2022-02-25
-    LogBook is Git log: milestone, 2022-02-03, 0d
-    Attendance Record [Minghong Xu, Zepeng Pang] : 2022-02-03, 2022-02-27
-    Role Allocation (responsibility matrix) [Minghong Xu] : milestone, 2022-02-14, 0d
-    Contribution to Project Deliverables [Zepeng Pang] : 2022-02-25, 2022-03-02
+    section Design & Development
+    Design the Algorithm : design, 2022-10-17, 14d
+    Image Processing Algorithm Development : 2022-10-31, 10d
+    Image Processing Algorithm Testing : 2022-11-3, 10d
+    Vehicle Association Algorithm Development : 2022-11-7, 14d
+    Kalman Filter Algorithm Development : 2022-11-21, 14d
+    Single Vehicle Tracking Algorithm Development : 2022-11-28, 14d
+    Single Vehicle Tracking Algorithm Testing : 2022-12-5, 8d    
+    Presentation Preparation : 2022-12-10, 4d
+    Single Vehicle Tracking : milestone, 2022-12-12, 0d
+    Presentation : crit, 2022-12-13, 2022-12-13
 
+    section Testing
 ```
