@@ -30,8 +30,8 @@ gantt
     section Design & Development
     Design the Algorithm : 2022-10-17, 14d
     Image Processing Algorithm Development : 2022-10-24, 10d
-    Image Processing Algorithm Testing : imgprocessing test, 2022-10-31, 10d
-    Vehicle Association Algorithm Development : after imgprocessing test, 14d
+    Image Processing Algorithm Testing : 2022-10-31, 10d
+    Vehicle Association Algorithm Development : 2022-11-7, 14d
     Kalman Filter Algorithm Development : 2022-11-21, 14d
     Single Vehicle Tracking Algorithm Development : 2022-11-28, 10d
     Single Vehicle Tracking Algorithm Testing : 2022-12-5, 14d
