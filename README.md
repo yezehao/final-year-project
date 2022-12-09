@@ -25,7 +25,7 @@ gantt
     Literature Review : prepare, 2022-09-26, 35d
     Preliminary Reprot Writing : reprot writing, 2022-10-10, 7d
     Risk Assessment and Safety forms : milestone, 2022-10-13, 0d
-    Preliminary Report : crit, after report writing, 2022-10-14
+    Preliminary Report : crit, 2022-10-14, 0d
 
     section Design & Development
     Design the Algorithm : design, 2022-10-17, 14d
@@ -39,7 +39,7 @@ gantt
     Multiple Vehicle Tracking Algorithm Development: 2023-01-09, 21d
     Multiple Vehicle Tracking Algorithm Testing: 2023-01-23, 14d
     Single Vehicle Tracking : milestone, 2022-12-12, 0d
-    Presentation : crit, 2022-12-13, 2022-12-13
+    Presentation : crit, 2022-12-13, 0d
 
     section Testing
     Overall Testing: 2023-01-30, 35d
@@ -48,7 +48,7 @@ gantt
     section Report Writing
     Bench Inspection Writing : 2023-03-20, 2023-04-30
     Final Report Writing : 2023-04-24, 2023-05-14
-    Bench Inspection : crit, 2023-05-11, 2023-05-11    
-    Final Report : crit, 2023-05-19, 2023-05-19
+    Bench Inspection : crit, 2023-05-11, 0d
+    Final Report : crit, 2023-05-19, 0d
 
 ```
