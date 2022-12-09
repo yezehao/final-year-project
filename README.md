@@ -29,15 +29,26 @@ gantt
 
     section Design & Development
     Design the Algorithm : design, 2022-10-17, 14d
-    Image Processing Algorithm Development : 2022-10-31, 10d
-    Image Processing Algorithm Testing : 2022-11-3, 10d
+    Image Processing Algorithm Development : 2022-10-24, 10d
+    Image Processing Algorithm Testing : 2022-10-31, 10d
     Vehicle Association Algorithm Development : 2022-11-7, 14d
     Kalman Filter Algorithm Development : 2022-11-21, 14d
-    Single Vehicle Tracking Algorithm Development : 2022-11-28, 14d
-    Single Vehicle Tracking Algorithm Testing : 2022-12-5, 8d    
+    Single Vehicle Tracking Algorithm Development : 2022-11-28, 10d
+    Single Vehicle Tracking Algorithm Testing : 2022-12-5, 14d
     Presentation Preparation : 2022-12-10, 4d
+    Multiple Vehicle Tracking Algorithm Development: 2023-01-09, 21d
+    Multiple Vehicle Tracking Algorithm Testing: 2023-01-23, 14d
     Single Vehicle Tracking : milestone, 2022-12-12, 0d
     Presentation : crit, 2022-12-13, 2022-12-13
 
     section Testing
+    Overall Testing: 2023-01-30, 35d
+    Overall Modification : 2023-02-13, 35d
+
+    section Report Writing
+    Bench Inspection Writing : 2023-03-20, 2023-04-30
+    Final Report Writing : 2023-04-24, 2023-05-14
+    Bench Inspection : crit, 2023-05-11, 2023-05-11    
+    Final Report : crit, 2023-05-19, 2023-05-19
+
 ```
