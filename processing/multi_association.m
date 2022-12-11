@@ -16,14 +16,12 @@ for i = 1:(numframes-1)
         for m = 1:min(size_x, size_y)
             [x,y] = find(min(min(matrix)) == matrix); % find the minimum distance
             if min(min(matrix)) <= 10
-                z = x; z(:,1) = loopnum;
+                z = x; % create the matrix with the same size of x and y
+                z(:,1) = loopnum;
                 associa(i).path(m).centroid = [x,y,z];
-                % replace the colomn of minimum distance with large number
-                for j = 1:size_x
-                    matrix(j,y) = 1000;end
-                % replace the row of minimum distance with large number
-                for k = 1:size_y    
-                    matrix(x,k) = 1000;end
+                % replace the row and colomn of minimum distance with large number
+                matrix(:,y) = 1000;  
+                matrix(x,:) = 1000;
             else
                 loopnum = loopnum+1;
             end
@@ -40,9 +38,9 @@ clearvars x y z i j k
 for i = 1:(numframes-2)
     % start with the first point for further processing
     % need to be modified if multiple vichels need to be attrack
-    limit = size(associa(i).path);
-    for j = 1:limit(2) 
-        if isempty(associa(i).path) == 0 && isempty(associa(i+1).path) == 0
+    if isempty(associa(i).path) == 0 && isempty(associa(i+1).path) == 0
+        limit = size(associa(i).path);
+        for j = 1:limit(2) 
             number = j;
             A = associa(i).path(number).centroid;
             coordinate(3*j-2,i) = structure(i).centroid(A(1),1);
@@ -52,9 +50,9 @@ for i = 1:(numframes-2)
             for n = 1:m(2)
                 B = associa(i+1).path(n).centroid;
                 if  A(2) == B(1) && A(3) == B(3)
-                    coordinate(1,i+1) = structure(i+1).centroid(B(1),1);
-                    coordinate(2,i+1) = structure(i+1).centroid(B(1),2);
-                    coordinate(3,i+1) = B(3);
+                    coordinate(3*j-2,i+1) = structure(i+1).centroid(B(1),1);
+                    coordinate(3*j-1,i+1) = structure(i+1).centroid(B(1),2);
+                    coordinate(3*j,i+1) = B(3);
                     number = n;
                 end
             end
@@ -67,4 +65,4 @@ clearvars A B i j m n number limit
 
 
 %% Save the matrix into authorization file
-save('C:\Users\30348\Documents\final-year-project\data\association\2.5_1_1.mat','coordinate')
+save('C:\Users\30348\Documents\final-year-project\data\multi-association\2.5_1_1.mat','coordinate')
