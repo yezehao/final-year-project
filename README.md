@@ -23,9 +23,9 @@ gantt
 
     section Preparation
     Literature Review : prepare, 2022-09-26, 35d
-    Preliminary Reprot Writing : reprot writing, 2022-10-10, 7d
+    Preliminary Reprot Writing : report writing, 2022-10-10, 3d
     Risk Assessment and Safety forms : milestone, 2022-10-13, 0d
-    Preliminary Report : crit, 2022-10-14, 0d
+    Preliminary Report : crit, after report writing, 2022-10-14
 
     section Design & Development
     Design the Algorithm : 2022-10-17, 14d
