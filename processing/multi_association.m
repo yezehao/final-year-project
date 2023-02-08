@@ -1,6 +1,6 @@
 %% Distance-based Association %%
 clear; clc;
-
+load('')
 load('C:\Users\30348\Documents\final-year-project\data\centroid\2.5_1_1.mat');
 numframes = 1495; % the number of frames is 1495
 
@@ -12,6 +12,11 @@ for i = 1:(numframes-1)
     if isempty(a) == 0 && isempty(b) ==0 
     % The two series of centroid cannot be empty
         matrix = pdist2(a,b);
+        for m = 1:length(a)/2
+            for n = 1:length(b)/2
+             distance(m,n) = sqrt(D(m*2-1,n*2-1)^2 + D(m*2,n*2)^2);
+            end
+        end
         [size_x,size_y] = size(matrix);
         for m = 1:min(size_x, size_y)
             [x,y] = find(min(min(matrix)) == matrix); % find the minimum distance
