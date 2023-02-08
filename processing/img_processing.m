@@ -37,5 +37,7 @@ end
 
 clc;
 
-%% Save the structure into preprocessing file
+%% Save the structure into data file
 save('C:\Users\30348\Documents\final-year-project\data\centroid\2.5_1_1.mat','structure')
+%% Save the structure into processing file for further process
+save('centroid\2.5_1_1.mat','structure')
