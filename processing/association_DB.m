@@ -1,6 +1,5 @@
-%% Distance-based Association %%
+%% Distance-based Association
 clear; clc;
-
 load('centroid\2.5_1_1.mat');
 numframes = 1496; % the number of frames is 1495
 
@@ -37,7 +36,6 @@ end
 % clear the useless variables
 clearvars loopnum a b size_x size_y m 
 clearvars x y z i j k
-
 
 % %% The loop to get the matrix of series of centroid
 % for i = 1:(numframes-3)

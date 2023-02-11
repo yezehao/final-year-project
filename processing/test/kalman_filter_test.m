@@ -48,16 +48,6 @@ end
 %         distance(x,:) = 1000000;
 %         distance(:,y) = 1000000;
 %       end
-% 
-% 
-% 
-% %         [x,y] = find(min(matrix1(y,:)) == matrix1); % find the minimum distance
-% %         m = a(x,:);
-% %         xk = kalmanfilter(m);
-% %         single(1,i) = m(1);
-% %         single(2,i) = m(2);
-% %         single(3,i) = xk(1);
-% %         single(4,i) = xk(2);
 % end
 
 
