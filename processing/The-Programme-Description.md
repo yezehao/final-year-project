@@ -14,9 +14,11 @@ Image processing is performed on the image obtained by subtracting two consecuti
 + Distance-Based Association: The programme ``association_DB`` is used to making association on multiple vehicles according to distance.
 + Single Association: The programme ``association_S`` is used to making association on single vehicle.  
 + Multi Association: The programme ``association_M`` is used to making association on multiple vehicles. 
+  
+When the association is making, the function ``pdist2`` is used to calculate the distance between the two points. The [SORT Algorithm](https://github.com/abewley/sort) use the [Hungarian Algorithm](https://github.com/PL97/Hungarian-algorithm-By-matlab) to make association. However, in this algorithm, there are more limitations so the specific algrothm should be used for this association task.
 
 ******
 ## Auxiliary Programmes
 + Video Maker: The ``videomaker`` is used to generate the video about the result based on the series of data in the ``data`` folder. This is an auxiliary program for displaying results
 
-+ Kalman Filter: The programme ``kalmanfilter`` is the MATLAB function which used as Kalman filter in both single vehicle association and multiple vehicle association. 
++ Kalman Filter: The programme ``kalmanfilter`` is the MATLAB function which used as Kalman filter in both single vehicle association and multiple vehicle association.
