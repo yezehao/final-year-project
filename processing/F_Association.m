@@ -1,4 +1,4 @@
-function [path] = Association(structure,numframes)
+function [path,loop] = F_Association(structure,numframes)
 %% The loop using distance-base association to associate centroid together 
 loopnum = 1;
 for i = 1:(numframes-2)
@@ -13,9 +13,9 @@ a = structure(i).centroid;
             [x,y] = find(min(min(matrix)) == matrix); % find the minimum distance
             if min(min(matrix)) <= 15 % The speed of vehicle should within limitation
                 z = x; z(:,1) = loopnum;
-                path(3*j-2,i) = x(1);
-                path(3*j-1,i) = y(1);
-                path(3*j-0,i) = z(1);
+                path(2*j-1,i) = x(1);
+                path(2*j-0,i) = y(1);
+                loop(i) = z(1);
                 % replace the colomn of minimum distance with large number
                 for m = 1:size_x
                     matrix(m,y(1)) = 10000;end
