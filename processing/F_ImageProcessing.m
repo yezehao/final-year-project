@@ -1,4 +1,4 @@
-function [centroid] = ImageProcessing(videoobj,i)
+function [centroid] = F_ImageProcessing(videoobj,i)
     % Read in the frames
     frame_1 = rgb2gray(read(videoobj,i));
     frame_2 = rgb2gray(read(videoobj,i+1));
