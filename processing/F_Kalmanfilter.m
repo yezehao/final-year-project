@@ -1,4 +1,4 @@
-function [xk, S, X, firstRun] = kalmanfilter(m, S, X, firstRun) 
+function [xk, S, X, firstRun] = F_Kalmanfilter(m, S, X, firstRun) 
 % Initialization
 dt=0.2;
 noise_process = 1;
