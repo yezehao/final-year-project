@@ -48,5 +48,73 @@ The location information about the vehicles are numerous, which means it would s
 
 
 
+# Analysis
+## The deviation between vehicle centre and tracking centre
++ The colour of vehicles: The grayscale image in MATLAB is 8-Byte grayscale, the value of the image would range from 0-255. In hence, we can assume that the value of the environment is 20. Vehicles with lighter colours appear white in the greyscale image, while vehicles with darker colours appear black in the greyscale image. To facilitate the distinction, we assume that the vehicles are pure white and pure black respectively, and their values in the greyscale image are 255(white) and 0(black). The result can be displayed by generating image through created matrices in MATLAB. The results are shown as follow.
+  ````
+  env1 = 30 * ones(8); 
+  env2 = 10 * ones(8);
+  w = 224; b = 1;
 
+  white1=[0 0 0 0 0 0 0 0;
+          0 w w w w 0 0 0;
+          0 w w w w 0 0 0;
+          0 w w w w 0 0 0;
+          0 0 0 0 0 0 0 0;
+          0 0 0 0 0 0 0 0;
+          0 0 0 0 0 0 0 0;
+          0 0 0 0 0 0 0 0;];
+  white2=[0 0 0 0 0 0 0 0;
+          0 0 0 w w w w 0;
+          0 0 0 w w w w 0;
+          0 0 0 w w w w 0;
+          0 0 0 0 0 0 0 0;
+          0 0 0 0 0 0 0 0;
+          0 0 0 0 0 0 0 0;
+          0 0 0 0 0 0 0 0;];
+  black1=[0 0 0 0 0 0 0 0;
+          0 0 0 0 0 0 0 0;
+          0 0 0 0 0 0 0 0;
+          0 b b b b 0 0 0;
+          0 b b b b 0 0 0;
+          0 b b b b 0 0 0;
+          0 0 0 0 0 0 0 0;
+          0 0 0 0 0 0 0 0;];
+  black2=[0 0 0 0 0 0 0 0;
+          0 0 0 0 0 0 0 0;
+          0 0 0 0 0 0 0 0;
+          0 0 0 b b b b 0;
+          0 0 0 b b b b 0;
+          0 0 0 b b b b 0;
+          0 0 0 0 0 0 0 0;
+          0 0 0 0 0 0 0 0;];
+  ```` 
+  + subtraction calculation and  result comparison
+  ````
+  whitet1 = (white1+env1)-(white2+env1); 
+  whitet2 = (white1+env2)-(white2+env2);
+  blackt1 = (black1+env1)-(black2+env1); 
+  blackt2 = (black1+env2)-(black2+env2);
+  I_w1 = mat2gray(whitet1); 
+  I_w2 = mat2gray(whitet2);
+  I_b1 = mat2gray(blackt1); 
+  I_b2 = mat2gray(blackt2);
+
+  figure,
+  subplot(2,2,1);imshow(I_w1);
+  subplot(2,2,2);imshow(I_w2);
+  subplot(2,2,3);imshow(I_b1);
+  subplot(2,2,4);imshow(I_b2);
+  saveas(gcf,'comparison_subtraction_first.jpg', 'jpg')
+  ````
+  ![vehicles comparison](comparison_subtraction_first.jpg "cars with different colour and environment value")
+  + For the first image, the subtraction of the matrices are made firstly, then the matrices are converted into image. In the process of transforming the grayscale image, the MATLAB programme automonously performs histogram equivalization. The positive and negative values of the subtraction of the two frames are represented simultaneously in the grayscale image.
+
+  ![vehicle comparison](comparison_mat2gray_first.jpg "cars with different colour and environment value")
+  + For the second image, the matrices are firstly convert into images and the images are used to make subtraction. In hence, only the positive value (where the car in the former frame) is displayed.
+
+  According to the result, the colour of vehicles would not influence the tracking result. In reality, the However, the deviation between vehicle centre and tracking centre still exist. The influence of the vehicle size need to be take into account.
+
++ The size of vehicles: 
++ The speed of vehicles:
 
