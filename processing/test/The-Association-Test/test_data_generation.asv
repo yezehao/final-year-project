@@ -1,0 +1,26 @@
+%% test data generation
+clear;clc;
+nframes = 100;
+for i = 1:nframes
+    centroid(1,1) = 100  + 10*i + 7.5*(-0.5 + rand(1,1));
+    centroid(1,2) = 100  + 10*i + 7.5*(-0.5 + rand(1,1));
+    centroid(2,1) = 100  + 10*i + 7.5*(-0.5 + rand(1,1));
+    centroid(2,2) = 1100 - 10*i + 7.5*(-0.5 + rand(1,1));
+    centroid(3,1) = 600 +  0*i  + 7.5*(-0.5 + rand(1,1));
+    centroid(3,2) = 100 +  10*i + 7.5*(-0.5 + rand(1,1));
+    structure(i).centroid = centroid;
+end
+
+figure,
+for i = 1:nframes
+    centroid1 = structure(i).centroid;
+    centroid2 = structure(i).centroid;
+
+    line([centroid()],[],"color","r");
+    line([],[],"color","g");
+    line([],[],"color","b");
+end
+
+
+
+save('test.mat','structure')
