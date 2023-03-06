@@ -1,15 +1,23 @@
 %% Distance-based Association
 clear; clc;
 % % load data in data folder
+
 % cd ..
 % currentfolder = pwd;
 % cd processing\
-% load([currentfolder,'\data\centroid_v2\2.5_1_1.mat']);
+% load([currentfolder,'\data\centroid\2.5_1_1.mat']);
+
 load("test\The-Association-Test\test.mat")
-numframes = 100; % the number of frames is 1495
+
+numframes = 100; % the number of frames is 100
 
 % Initialize Tracking
-firstrun = [0; 0; 0];
+ff = structure(1).centroid;
+if isempty(ff) == 0
+    firstrun = zeros(length(ff),1);
+else
+    firstrun = [0];
+end
 
 % Tracking Procedue
 for i = 1:(numframes-1)
