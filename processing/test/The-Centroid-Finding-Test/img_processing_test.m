@@ -4,7 +4,7 @@ currentfolder = 'C:\Users\30348\Desktop\final-year-project\';
 videoobj = VideoReader([currentfolder,'\data\video(no-github)\2.5_2_4.mp4']);
 nframes = get (videoobj, "NumFrames"); % Get the number of frames
 
-i = 100;
+i = 370;
 % Read in the frames
 frame_1 = rgb2gray(read(videoobj,i));
 frame_2 = rgb2gray(read(videoobj,i+1));
@@ -46,3 +46,33 @@ for j = 1:length(prop)
 % subplot(2,2,4);imshow(I_open);hold on;
 % for j = 1:length(prop)
 %     plot(prop(j).Centroid(1),prop(j).Centroid(2),'ro');end
+
+%% Error Calculation
+actual = [7,229; 58,792; 116,100; 119,162;
+          119,1904; 119,1904; 244,120; 526,30;
+          778,1608; 794,1647; 810,1686; 1018.5,1284; % The two vehicles are getting together 1024,1293 1013,1275
+          1024,1206; 1042,1186; 1071,1078; 1080,1005;
+          1101,1931; 1099,1904; 1111,1738; 1125,921;
+          1161,1626; 1155,177; 1155,1360; 1169,1114;
+          1188,719; 1206,1317.5; 1204,1629; 1229,593;
+          1245,1022; 1238,522; 1244,1633; 1246,1321;
+          1285,1323; 1303,1026; 1295,1639; 1328,308;
+          1362,1030; 1388,154; 1422,1336; 1425,1034];
+error = centroid - actual;
+result(:,1:2) = centroid;
+result(:,3:4) = actual;
+result(:,5:6) = error;
+
+error = roundn(error,-3);
+mean_ = mean(error(:,1:2));
+std_ = std(error(:,1:2));
+
+error_abs = abs(error);
+mean_abs = mean(error_abs(:,1:2));
+std_abs = std(error_abs(:,1:2));
+
+R = [mean_; std_;
+     mean_abs; std_abs];
+
+
+
