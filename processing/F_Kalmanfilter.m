@@ -1,4 +1,4 @@
-function [xk, S, X] = F_Kalmanfilter(m, S, X) 
+function [S, X] = F_Kalmanfilter(m, S, X) 
 % Initialization
 dt=0.2;
 noise_process = 1;
@@ -22,9 +22,12 @@ X_ = F*X;
 S_ = F*S*F.' + Q;
 K = S_ * H.' * inv(H * S_ * H.' + R);
 
-Y = [m(1) m(2)]';
-X = X_ + K*(Y - H * X_);
-S = S_ - K * H * S_;
-xk(1,1) = X(1);
-xk(2,1) = X(2);
+if isempty(m) == 0
+    Y = [m(1) m(2)]';
+    X = X_ + K*(Y - H * X_);
+    S = S_ - K * H * S_;
+else
+    S = S_;
+    X = X_;
+end
 end
