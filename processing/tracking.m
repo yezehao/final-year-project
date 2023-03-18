@@ -41,6 +41,13 @@ for i  = 1:numframes
                 Track(j).centroid(i,2) = X(2,1);
                 Track(j).kalmanS = S;
                 Track(j).kalmanX = X;
+                if Track(j).delete == 0
+                    Track(j).centroid(i,:) = [0,0];
+                    Track(j).kalmanS = zeros(4);
+                    Track(j).kalmanX = [0,0,0,0]';
+                else
+                    Track(j).delete = Track(j).delete-1;
+                end
             end
         end
     else % There is detection
@@ -50,6 +57,7 @@ for i  = 1:numframes
                 Track(j).centroid(i,:) = m;
                 Track(j).kalmanS = 10^6 * eye(4);
                 Track(j).kalmanX = [m(1),m(2),0,0]';
+                Track(j).delete = 10;
             end
         else % Data associatoin and Kalman filter
             for j = 1:Nt 
@@ -103,6 +111,7 @@ for i  = 1:numframes
                     Track(p).centroid(i,:) = m;
                     Track(p).kalmanS = 10^6 * eye(4);
                     Track(p).kalmanX = [m(1),m(2),0,0]';
+                    Track(p).delete = 10;
                 elseif A(j,3) == -1
                     p = A(j,1);
                     q = A(j,2);
@@ -114,6 +123,13 @@ for i  = 1:numframes
                     Track(p).centroid(i,2) = X(2,1);
                     Track(p).kalmanS = S;
                     Track(p).kalmanX = X;
+                    if Track(p).delete == 0
+                        Track(p).centroid(i,:) = [0,0];
+                        Track(p).kalmanS = zeros(4);
+                        Track(p).kalmanX = [0,0,0,0]';
+                    else
+                        Track(p).delete = Track(p).delete-1;
+                    end
                 else % A(j,3) = 1
                     p = A(j,1);
                     q = A(j,2);
@@ -125,6 +141,7 @@ for i  = 1:numframes
                     Track(p).kalmanX = X;
                     Track(p).centroid(i,1) = X(1,1);
                     Track(p).centroid(i,2) = X(2,1);
+                    Track(p).delete = 10;
                 end
             end
         end
