@@ -3,8 +3,8 @@ clear; clc;
 % get the path of current folder
 cd ('..'); currentfolder = pwd; cd ('processing\');
 path = [currentfolder,'\data\'];
-
-for j = 9:12
+tic
+for j = 1:1
     % read in the information about video
     videoobj = VideoReader([path,'video(no-github)\2.5_1_',num2str(j),'.mp4']);
     nframes = get(videoobj, "NumFrames");
@@ -26,3 +26,4 @@ for j = 9:12
     % clear variables
     clearvars structure videoobj
 end
+toc
