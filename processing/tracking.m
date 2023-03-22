@@ -1,5 +1,6 @@
 % Initializatoin
 clear;clc;
+tic; % record the start time
 cd ('..'); currentfolder = pwd; cd ('processing\');
 path = [currentfolder,'\data\'];
 % Data Input
@@ -43,8 +44,7 @@ for i  = 1:numframes
                 Track(j).kalmanX = X;
                 if Track(j).delete == 0
                     Track(j).centroid(i,:) = [0,0];
-                    Track(j).kalmanS = zeros(4);
-                    Track(j).kalmanX = [0,0,0,0]';
+                    Track(j).kalmanX = [X(1,1),X(2,1),0,0]';
                 else
                     Track(j).delete = Track(j).delete-1;
                 end
@@ -70,7 +70,7 @@ for i  = 1:numframes
             A = []; 
             for k = 1:Nd
                 [x,y] = find(min(min(matrix)) == matrix); % find the minimum distance
-                if min(min(matrix)) <= 45 % The speed of vehicle should within limitation
+                if min(min(matrix)) <= 60 % The speed of vehicle should within limitation
                     A(k,1) = x(1); A(k,2) = y(1); A(k,3) = 1;
                 end
                 % replace the colomn of minimum distance with large number
@@ -125,8 +125,7 @@ for i  = 1:numframes
                     Track(p).kalmanX = X;
                     if Track(p).delete == 0
                         Track(p).centroid(i,:) = [0,0];
-                        Track(p).kalmanS = zeros(4);
-                        Track(p).kalmanX = [0,0,0,0]';
+                        Track(p).kalmanX = [X(1,1),X(2,1),0,0]';
                     else
                         Track(p).delete = Track(p).delete-1;
                     end
@@ -150,3 +149,5 @@ end
 
 %% Save the structure into data file
 save([path,'\track\2.5_1.mat'],'Track')
+
+toc % The time for runnning the tracking programme
