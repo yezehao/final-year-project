@@ -4,7 +4,7 @@ tic; % record the start time
 cd ('..'); currentfolder = pwd; cd ('processing\');
 path = [currentfolder,'\data\'];
 % Data Input
-load([path,'centroid\2.5_1.mat']);
+load([path,'centroid\2.5_2.mat']);
 numframes = 1495;
 
 %% structure: Track
@@ -148,6 +148,6 @@ for i  = 1:numframes
 end
 
 %% Save the structure into data file
-save([path,'\track\2.5_1.mat'],'Track')
+save([path,'\track\2.5_2.mat'],'Track')
 
 toc % The time for runnning the tracking programme
