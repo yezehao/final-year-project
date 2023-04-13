@@ -47,10 +47,10 @@ gantt
     Overall Modification : 2023-02-13, 35d
 
     section Report Writing
-    Bench Inspection Writing : 2023-03-20, 2023-04-30
-    Final Report Writing : 2023-04-24, 2023-05-14
-    Bench Inspection : crit, 2023-05-11, 0d
-    Final Report : crit, 2023-05-19, 0d
+    Bench Inspection Writing : 2023-03-17, 2023-03-24
+    Final Report Writing : 2023-03-24, 2023-04-19
+    Bench Inspection : crit, 2023-03-24, 0d
+    Final Report : crit, 2023-04-19, 0d
 
 ```
 
