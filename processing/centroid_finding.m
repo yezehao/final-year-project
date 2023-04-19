@@ -4,9 +4,9 @@ clear; clc;
 cd ('..'); currentfolder = pwd; cd ('processing\');
 path = [currentfolder,'\data\'];
 tic
-for j = 1:1
+for j = 1:12
     % read in the information about video
-    videoobj = VideoReader([path,'video(no-github)\2.5_1_',num2str(j),'.mp4']);
+    videoobj = VideoReader([path,'video(no-github)\5_2_',num2str(j),'.mp4']);
     nframes = get(videoobj, "NumFrames");
     
     %% Image Processing Version 2
@@ -21,7 +21,7 @@ for j = 1:1
     end
     
     %% Save the structure into data file
-    filename = ['2.5_1_',num2str(j),'.mat'];
+    filename = ['5_2_',num2str(j),'.mat'];
     save([path,'\centroid\',filename],'structure')
     % clear variables
     clearvars structure videoobj

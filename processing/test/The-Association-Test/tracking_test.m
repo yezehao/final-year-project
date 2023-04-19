@@ -8,9 +8,9 @@ Track = struct([]);
 
 
 %% Data Input
-load('data\test_data_empty.mat');
-% load('data\test_data_non_empty.mat')
-numframes = 50;
+% load('data\test_data_empty.mat');
+load('data\test_data_non_empty.mat')
+numframes = 100;
 
 %% Tracking
 % The timestep is represented by i
@@ -132,14 +132,34 @@ for i  = 1:numframes
     end
 end
 
+% for i = 1:numframes-1
+%     L1 = Track(1).centroid;L2 = Track(2).centroid;
+%     if L1(i,1) ~= 0
+%         line([L1(i,1),L1(i+1,1)],[L1(i,2),L1(i+1,2)],"color","y")
+%     end
+%     if L2(i,1) ~= 0
+%         line([L2(i,1),L2(i+1,1)],[L2(i,2),L2(i+1,2)],"color","r")
+%     end    
+% end
+% saveas(gcf,'data\tracking_algorithm_test_with_empty.jpg') % save the result of testing
+
+
 for i = 1:numframes-1
-    L1 = Track(1).centroid;L2 = Track(2).centroid;
+    L1 = Track(1).centroid;L2 = Track(2).centroid;L3 = Track(3).centroid;
     if L1(i,1) ~= 0
-        line([L1(i,1),L1(i+1,1)],[L1(i,2),L1(i+1,2)],"color","y")
+        line([L1(i,1),L1(i+1,1)],[L1(i,2),L1(i+1,2)],"color","b")
     end
     if L2(i,1) ~= 0
-        line([L2(i,1),L2(i+1,1)],[L2(i,2),L2(i+1,2)],"color","r")
-    end    
-end
+        line([L2(i,1),L2(i+1,1)],[L2(i,2),L2(i+1,2)],"color","b")
+    end
+    if L3(i,1) ~= 0
+        line([L3(i,1),L3(i+1,1)],[L3(i,2),L3(i+1,2)],"color","b")
+    end
 
-saveas(gcf,'data\tracking_algorithm_test.jpg') % save the result of testing
+    L = structure(i).centroid;Ln = structure(i+1).centroid;
+    line([L(1,1),Ln(1,1)],[L(1,2),Ln(1,2)],"color","r")
+    line([L(2,1),Ln(2,1)],[L(2,2),Ln(2,2)],"color","r")
+    line([L(3,1),Ln(3,1)],[L(3,2),Ln(3,2)],"color","r")
+
+end
+saveas(gcf,'data\tracking_algorithm_test_non_empty.jpg') % save the result of testing

@@ -45,26 +45,26 @@ for t = 1:length(Track)
     end
 end
 
-% % clear variables
-% clearvars a b C firstrun  i loc_video loc_video1 loc_video2 t 
-% 
-% % Calculate the length of tracks
-% for i = 1:length(traj)
-%     a = traj(i).frame;
-%     for j = 1:length(a(:,1))-2
-%         traj(i).L(j,1) = a(j+1,1)-a(j,1);
-%     end
-% end
-% 
-% for i = 1:length(traj)
-%     if isempty(traj(i).L) == 0
-%         MAX(i,1) = max(traj(i).L);
-%     else
-%         MAX(i,1) = 0;
-%     end
-% end
+% clear variables
+clearvars a b C firstrun  i loc_video loc_video1 loc_video2 t 
 
-Nt = 158; % Choose the track whose ID is 3674
+% Calculate the length of tracks
+for i = 1:length(traj)
+    a = traj(i).frame;
+    for j = 1:length(a(:,1))-2
+        traj(i).L(j,1) = a(j+1,1)-a(j,1);
+    end
+end
+
+for i = 1:length(traj)
+    if isempty(traj(i).L) == 0
+        MAX(i,1) = max(traj(i).L);
+    else
+        MAX(i,1) = 0;
+    end
+end
+
+Nt = 3000; % Choose the track whose ID is 158
 a = [0,0,1; 1,0,1; 2,0,1; 3,0,1; 4,0,1; 5,0,1;
      0,1,1; 1,1,1; 2,1,1; 3,1,1; 4,1,1; 5,1,1;];
 

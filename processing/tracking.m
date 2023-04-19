@@ -1,10 +1,9 @@
 % Initializatoin
 clear;clc;
-tic; % record the start time
 cd ('..'); currentfolder = pwd; cd ('processing\');
 path = [currentfolder,'\data\'];
 % Data Input
-load([path,'centroid\2.5_2.mat']);
+load([path,'centroid\5_2.mat']);
 numframes = 1495;
 
 %% structure: Track
@@ -15,6 +14,7 @@ Track = struct([]);
 %% Tracking
 % The timestep is represented by i
 for i  = 1:numframes
+    tic % record the start time
     detection = structure(i).centroid;
     % The number of detection
     if isempty(detection) == 0
@@ -70,7 +70,7 @@ for i  = 1:numframes
             A = []; 
             for k = 1:Nd
                 [x,y] = find(min(min(matrix)) == matrix); % find the minimum distance
-                if min(min(matrix)) <= 60 % The speed of vehicle should within limitation
+                if min(min(matrix)) <= 40 % The speed of vehicle should within limitation
                     A(k,1) = x(1); A(k,2) = y(1); A(k,3) = 1;
                 end
                 % replace the colomn of minimum distance with large number
@@ -145,9 +145,31 @@ for i  = 1:numframes
             end
         end
     end
+    toc % The time for runnning the tracking programme for one loop
+    time(i,1) = toc;
+    N_tracks(i,1) = Nt;
 end
 
 %% Save the structure into data file
-save([path,'\track\2.5_2.mat'],'Track')
+save([path,'\track\5_2.mat'],'Track')
 
-toc % The time for runnning the tracking programme
+% %% Efficiency Calculation
+figure, grid on
+for h = 1:1494
+    line([h,h+1],[N_tracks(h+1,1),N_tracks(h+2,1)],"color","r");
+    hold on
+end
+figure, grid on 
+for h = 1:1494
+    line([h,h+1],[time(h,1),time(h+1,1)],"color","m");
+    hold on
+    plot(h,time(h,1),"co")
+    hold on
+end
+figure, grid on
+for h = 1:1494
+    line([h,h],[N_tracks(h+1,1)-N_tracks(h,1),0],"color","y");
+    hold on
+    plot(h,N_tracks(h+1,1)-N_tracks(h,1),"md")
+    hold on    
+end

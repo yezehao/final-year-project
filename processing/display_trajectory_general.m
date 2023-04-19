@@ -3,10 +3,10 @@ clear; clc;
 cd ('..'); currentfolder = pwd; cd ('processing\');
 path = [currentfolder,'\data\'];
 % Data Input
-load([path,'track\2.5_2.mat']);
+load([path,'track\5_2.mat']);
 
 for i = 1:12
-videoobj(i).video = VideoReader([path,'video(no-github)\2.5_2_',num2str(i),'.mp4']);
+videoobj(i).video = VideoReader([path,'video(no-github)\5_2_',num2str(i),'.mp4']);
 end
 numframes = 1496;
 frame_l = 2000; % The length of frame
@@ -73,6 +73,6 @@ for t = 1:length(traj)
             end
     end
 end
-path_result = [currentfolder,'\result (no-github)\video 2.5_2_',num2str(l),' general.jpg'];
+path_result = [currentfolder,'\result (no-github)\video 5_2_',num2str(l),' general.jpg'];
 saveas(gcf,path_result); close;
 end
