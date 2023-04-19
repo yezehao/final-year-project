@@ -1,7 +1,7 @@
 %% Centroid Data Integration
 clear;clc;
 for i = 1:12
-    load(['2.5_1_',num2str(i),'.mat']);
+    load(['5_2_',num2str(i),'.mat']);
     coordinate(i).centroid = structure;
 end
 clearvars structure
@@ -35,4 +35,4 @@ for j = 1:numframes-1
     structure(j).centroid = m;
 end
 
-save('2.5_1.mat','structure')
+save('5_2.mat','structure')
